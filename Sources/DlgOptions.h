@@ -1,4 +1,4 @@
-#pragma once 
+п»ї#pragma once 
 
 #include "resource.h"
 
@@ -26,81 +26,81 @@ class CDlgOptions :
 			NOTIFY_ID_HANDLER(IDC_SLIDER_TRANSPARENCY, OnChangeTransparent)
 		END_MSG_MAP()
 
-		// Конструктор по-умолчанию
+		// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ
 		CDlgOptions(CMainDlg *pMainDlg);
 
-		// Инициализация шаблона диалога
+		// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С€Р°Р±Р»РѕРЅР° РґРёР°Р»РѕРіР°
 		VOID DoInitTemplate();
 
-		// Инициализация контролов диалога
+		// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РєРѕРЅС‚СЂРѕР»РѕРІ РґРёР°Р»РѕРіР°
 		VOID DoInitControls();
 
 	private:
 
-		CMainDlg*     m_pMainDlg;       // указатель на главный диалог
-		CMapWordStr*  m_pMapLanguages;  // массив доступных языков
-		CComboBox     m_cbLanguages;    // выпадающий список языков
-		WORD          m_wLanguageID;    // ИД выбранного языка
-		CHyperLink    m_hlEmail;        // гиперссылка на e-mail
-		CHyperLink    m_hlWWW;          // гиперссылка на WWW
-		CTrackBarCtrl m_tbDelay;        // ползунок установки задержки
-		CStatic       m_sDelay;         // для вывода значения задержки 
-		INT           m_iDelay;         // задержка в сек
-		COLORREF      m_crColor;        // цвет
-		COLORREF      m_crColorOld;     // цвет для восстановления
-		CStatic       m_sColor;         // прямоугольник для вывода текущего цвета
-		CRect         m_rColor;         // положение и размеры прямоугольника
-		CHotKeyCtrl   m_hkOff;          // контрол для установки hotkey
-		CTrackBarCtrl m_tbHeight;       // ползунок установки высоты окна
-		CStatic       m_sHeight;        // для вывода значения высоты окна
-		FLOAT         m_fHeight;        // высота окна
-		CTrackBarCtrl m_tbTransparency; // ползунок изменения прозрачности
-		CStatic       m_sTransparency;  // static для вывода процента прозрачности
-		BYTE          m_bTransparency;  // значение прозрачности
-		CButton       m_btnLock;        // кнопка установки блокировки рабочей станции
-		CButton       m_btnLogoff;      // кнопка установки выхода из системы
-		CButton       m_btnOffOnRun;    // кнопка установки выключения монитора при запуске
-		CButton       m_btnAutostart;   // кнопки установки автозапуска
-		CButton       m_btnOffAfterLock;// кнопка установки выключения после блокирования
+		CMainDlg*     m_pMainDlg;       // СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РіР»Р°РІРЅС‹Р№ РґРёР°Р»РѕРі
+		CMapWordStr*  m_pMapLanguages;  // РјР°СЃСЃРёРІ РґРѕСЃС‚СѓРїРЅС‹С… СЏР·С‹РєРѕРІ
+		CComboBox     m_cbLanguages;    // РІС‹РїР°РґР°СЋС‰РёР№ СЃРїРёСЃРѕРє СЏР·С‹РєРѕРІ
+		WORD          m_wLanguageID;    // РР” РІС‹Р±СЂР°РЅРЅРѕРіРѕ СЏР·С‹РєР°
+		CHyperLink    m_hlEmail;        // РіРёРїРµСЂСЃСЃС‹Р»РєР° РЅР° e-mail
+		CHyperLink    m_hlWWW;          // РіРёРїРµСЂСЃСЃС‹Р»РєР° РЅР° WWW
+		CTrackBarCtrl m_tbDelay;        // РїРѕР»Р·СѓРЅРѕРє СѓСЃС‚Р°РЅРѕРІРєРё Р·Р°РґРµСЂР¶РєРё
+		CStatic       m_sDelay;         // РґР»СЏ РІС‹РІРѕРґР° Р·РЅР°С‡РµРЅРёСЏ Р·Р°РґРµСЂР¶РєРё 
+		INT           m_iDelay;         // Р·Р°РґРµСЂР¶РєР° РІ СЃРµРє
+		COLORREF      m_crColor;        // С†РІРµС‚
+		COLORREF      m_crColorOld;     // С†РІРµС‚ РґР»СЏ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ
+		CStatic       m_sColor;         // РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє РґР»СЏ РІС‹РІРѕРґР° С‚РµРєСѓС‰РµРіРѕ С†РІРµС‚Р°
+		CRect         m_rColor;         // РїРѕР»РѕР¶РµРЅРёРµ Рё СЂР°Р·РјРµСЂС‹ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР°
+		CHotKeyCtrl   m_hkOff;          // РєРѕРЅС‚СЂРѕР» РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё hotkey
+		CTrackBarCtrl m_tbHeight;       // РїРѕР»Р·СѓРЅРѕРє СѓСЃС‚Р°РЅРѕРІРєРё РІС‹СЃРѕС‚С‹ РѕРєРЅР°
+		CStatic       m_sHeight;        // РґР»СЏ РІС‹РІРѕРґР° Р·РЅР°С‡РµРЅРёСЏ РІС‹СЃРѕС‚С‹ РѕРєРЅР°
+		FLOAT         m_fHeight;        // РІС‹СЃРѕС‚Р° РѕРєРЅР°
+		CTrackBarCtrl m_tbTransparency; // РїРѕР»Р·СѓРЅРѕРє РёР·РјРµРЅРµРЅРёСЏ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚Рё
+		CStatic       m_sTransparency;  // static РґР»СЏ РІС‹РІРѕРґР° РїСЂРѕС†РµРЅС‚Р° РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚Рё
+		BYTE          m_bTransparency;  // Р·РЅР°С‡РµРЅРёРµ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚Рё
+		CButton       m_btnLock;        // РєРЅРѕРїРєР° СѓСЃС‚Р°РЅРѕРІРєРё Р±Р»РѕРєРёСЂРѕРІРєРё СЂР°Р±РѕС‡РµР№ СЃС‚Р°РЅС†РёРё
+		CButton       m_btnLogoff;      // РєРЅРѕРїРєР° СѓСЃС‚Р°РЅРѕРІРєРё РІС‹С…РѕРґР° РёР· СЃРёСЃС‚РµРјС‹
+		CButton       m_btnOffOnRun;    // РєРЅРѕРїРєР° СѓСЃС‚Р°РЅРѕРІРєРё РІС‹РєР»СЋС‡РµРЅРёСЏ РјРѕРЅРёС‚РѕСЂР° РїСЂРё Р·Р°РїСѓСЃРєРµ
+		CButton       m_btnAutostart;   // РєРЅРѕРїРєРё СѓСЃС‚Р°РЅРѕРІРєРё Р°РІС‚РѕР·Р°РїСѓСЃРєР°
+		CButton       m_btnOffAfterLock;// РєРЅРѕРїРєР° СѓСЃС‚Р°РЅРѕРІРєРё РІС‹РєР»СЋС‡РµРЅРёСЏ РїРѕСЃР»Рµ Р±Р»РѕРєРёСЂРѕРІР°РЅРёСЏ
 
 	protected:
 
-		// Инициализация диалога
+		// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РґРёР°Р»РѕРіР°
 		LRESULT OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 
-		// Обработка WM_DESTROY
+		// РћР±СЂР°Р±РѕС‚РєР° WM_DESTROY
 		LRESULT OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 
-		// Обработка WM_PAINT
+		// РћР±СЂР°Р±РѕС‚РєР° WM_PAINT
 		LRESULT OnPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 
-		// Обработка IDOK
+		// РћР±СЂР°Р±РѕС‚РєР° IDOK
 		LRESULT OnOK(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled);
 
-		// Обработка IDCANCEL
+		// РћР±СЂР°Р±РѕС‚РєР° IDCANCEL
 		LRESULT OnCancel(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled);
 
-		// Выбор цвета
+		// Р’С‹Р±РѕСЂ С†РІРµС‚Р°
 		LRESULT OnColor(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled);
 
-		// Закрытие диалога
+		// Р—Р°РєСЂС‹С‚РёРµ РґРёР°Р»РѕРіР°
 		VOID CloseDialog(int nVal);
 
-		// Смены языка
+		// РЎРјРµРЅС‹ СЏР·С‹РєР°
 		LRESULT OnChangeLanguage(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled);
 
-		// Восстановление измененных настроек
+		// Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РёР·РјРµРЅРµРЅРЅС‹С… РЅР°СЃС‚СЂРѕРµРє
 		VOID RestoreSettings();
 
-		// Изменение задержки
+		// РР·РјРµРЅРµРЅРёРµ Р·Р°РґРµСЂР¶РєРё
 		LRESULT OnChangeDelay(WORD wID, LPNMHDR pnmh, BOOL& bHandled);
 
-		// Изменение высоты окна
+		// РР·РјРµРЅРµРЅРёРµ РІС‹СЃРѕС‚С‹ РѕРєРЅР°
 		LRESULT OnChangeSize(WORD wID, LPNMHDR pnmh, BOOL& bHandled);
 
-		// Изменение прозрачности
+		// РР·РјРµРЅРµРЅРёРµ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚Рё
 		LRESULT OnChangeTransparent(WORD wID, LPNMHDR pnmh, BOOL& bHandled);
 
-		// Выключает или выключает checkbox'ы 
+		// Р’С‹РєР»СЋС‡Р°РµС‚ РёР»Рё РІС‹РєР»СЋС‡Р°РµС‚ checkbox'С‹ 
 		LRESULT OnDisableCheckbox(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled);
 };

@@ -1,6 +1,6 @@
-#pragma once
+п»ї#pragma once
 
-// минимально требуемые версии
+// РјРёРЅРёРјР°Р»СЊРЅРѕ С‚СЂРµР±СѓРµРјС‹Рµ РІРµСЂСЃРёРё
 #define WINVER		      0x0600
 #define _WIN32_WINNT	   0x0600
 #define _WIN32_IE	      0x0500
@@ -19,7 +19,7 @@
 #include <sstream>
 #include <ctime>
 
-// тип списка языков (ИД, название)
+// С‚РёРї СЃРїРёСЃРєР° СЏР·С‹РєРѕРІ (РР”, РЅР°Р·РІР°РЅРёРµ)
 typedef std::map<WORD, const std::wstring> CMapWordStr;
 
 // WTL
@@ -50,19 +50,19 @@ typedef agg::font_engine_win32_tt_int16                       font_engine_type;
 typedef agg::font_cache_manager<font_engine_type>             font_manager_type;
 typedef agg::conv_curve<font_manager_type::path_adaptor_type> conv_font_curve_type;
 
-// для использования настроек программы
+// РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РЅР°СЃС‚СЂРѕРµРє РїСЂРѕРіСЂР°РјРјС‹
 #include "WTLAddons/CSettingsImpl.h"
 
-// для создания иконки в трее
+// РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РёРєРѕРЅРєРё РІ С‚СЂРµРµ
 #include "CTrayIconImpl.h"
 
-// версия программы (генерируется при сборке MSBuild)
+// РІРµСЂСЃРёСЏ РїСЂРѕРіСЂР°РјРјС‹ (РіРµРЅРµСЂРёСЂСѓРµС‚СЃСЏ РїСЂРё СЃР±РѕСЂРєРµ MSBuild)
 #include "Version.h"
 
-// константы по-умолчанию
+// РєРѕРЅСЃС‚Р°РЅС‚С‹ РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ
 #include "Default.h"
 
-// шаблон для создания мультиязычных диалогов
+// С€Р°Р±Р»РѕРЅ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РјСѓР»СЊС‚РёСЏР·С‹С‡РЅС‹С… РґРёР°Р»РѕРіРѕРІ
 #include "DlgTemplate.h"
 
 extern CAppModule _Module;

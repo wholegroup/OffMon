@@ -1,4 +1,4 @@
-/*
+п»ї/*
  * Copyright (C) 2015 Andrey Rychkov <wholegroup@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,7 +22,7 @@ CAppModule _Module;
 
 int Run(LPTSTR lpstrCmdLine = NULL, BOOL bSettings = FALSE)
 {
-	// разбор командной строки на наличии опции запуска только настроек
+	// СЂР°Р·Р±РѕСЂ РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё РЅР° РЅР°Р»РёС‡РёРё РѕРїС†РёРё Р·Р°РїСѓСЃРєР° С‚РѕР»СЊРєРѕ РЅР°СЃС‚СЂРѕРµРє
 	std::wstring wsCmdLine    = lpstrCmdLine;
 	BOOL         bOnlyOptions = FALSE;
 
@@ -58,16 +58,16 @@ int Run(LPTSTR lpstrCmdLine = NULL, BOOL bSettings = FALSE)
 
 INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR lpstrCmdLine, int nCmdShow)
 {
-	// включение отчета о утечках памяти
+	// РІРєР»СЋС‡РµРЅРёРµ РѕС‚С‡РµС‚Р° Рѕ СѓС‚РµС‡РєР°С… РїР°РјСЏС‚Рё
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_CHECK_ALWAYS_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
 
-	// создание локального мутекса отслеживающего работу программы в пределах терминальной сессии
+	// СЃРѕР·РґР°РЅРёРµ Р»РѕРєР°Р»СЊРЅРѕРіРѕ РјСѓС‚РµРєСЃР° РѕС‚СЃР»РµР¶РёРІР°СЋС‰РµРіРѕ СЂР°Р±РѕС‚Сѓ РїСЂРѕРіСЂР°РјРјС‹ РІ РїСЂРµРґРµР»Р°С… С‚РµСЂРјРёРЅР°Р»СЊРЅРѕР№ СЃРµСЃСЃРёРё
 	HANDLE  hMutexRun   = NULL;
 	wstring wsMutexName = L"Local\\{7E9CA7A6-70EB-43bb-8961-A04C14E3FD1B}";
 
-	// если мутекс есть, значит копия программы уже запущена
+	// РµСЃР»Рё РјСѓС‚РµРєСЃ РµСЃС‚СЊ, Р·РЅР°С‡РёС‚ РєРѕРїРёСЏ РїСЂРѕРіСЂР°РјРјС‹ СѓР¶Рµ Р·Р°РїСѓС‰РµРЅР°
 	hMutexRun = OpenMutex(0, FALSE, wsMutexName.c_str());
 	if (NULL != hMutexRun)
 	{
@@ -81,7 +81,7 @@ INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR lp
 		return 0;
 	}
 
-	// создаем новый мутекс
+	// СЃРѕР·РґР°РµРј РЅРѕРІС‹Р№ РјСѓС‚РµРєСЃ
 	hMutexRun = CreateMutex(NULL, TRUE, wsMutexName.c_str());
 	if (NULL == hMutexRun)
 	{
@@ -89,23 +89,23 @@ INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR lp
 		return 0;
 	}
 
-	// инициализация
+	// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
 	::DefWindowProc(NULL, 0, 0, 0L);
 
-	// инициализация контролов
+	// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РєРѕРЅС‚СЂРѕР»РѕРІ
 	AtlInitCommonControls(ICC_BAR_CLASSES);
 
-	// инициализация COM
+	// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ COM
 	HRESULT hRes = S_OK;
 
 	hRes = ::CoInitialize(NULL);
 	ATLASSERT(SUCCEEDED(hRes));
 
-	// инициализация программного модуля
+	// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РјРѕРґСѓР»СЏ
 	hRes = _Module.Init(NULL, hInstance);
 	ATLASSERT(SUCCEEDED(hRes));
 
-	// запуск рабочего цикла
+	// Р·Р°РїСѓСЃРє СЂР°Р±РѕС‡РµРіРѕ С†РёРєР»Р°
 	INT iRet = 0;
 
 	do 
@@ -113,13 +113,13 @@ INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR lp
 		iRet = Run(lpstrCmdLine, (CHANGE_LANGUAGE == iRet) ? TRUE : FALSE);
 	} while (CHANGE_LANGUAGE == iRet);
 
-	// завершение рабочего модуля
+	// Р·Р°РІРµСЂС€РµРЅРёРµ СЂР°Р±РѕС‡РµРіРѕ РјРѕРґСѓР»СЏ
 	_Module.Term();
 
-	// очистка ресурсов COM 
+	// РѕС‡РёСЃС‚РєР° СЂРµСЃСѓСЂСЃРѕРІ COM 
 	::CoUninitialize();
 
-	// закрытие мутекса
+	// Р·Р°РєСЂС‹С‚РёРµ РјСѓС‚РµРєСЃР°
 	ATLVERIFY(CloseHandle(hMutexRun));
 
 	return iRet;

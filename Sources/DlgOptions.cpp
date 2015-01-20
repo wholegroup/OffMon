@@ -1,4 +1,4 @@
-/*
+п»ї/*
  * Copyright (C) 2015 Andrey Rychkov <wholegroup@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@
 #include "DlgOptions.h"
 
 //////////////////////////////////////////////////////////////////////////
-// Конструктор по-умолчанию
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ
 //
 CDlgOptions::CDlgOptions(CMainDlg *pMainDlg)
 {
@@ -30,14 +30,14 @@ CDlgOptions::CDlgOptions(CMainDlg *pMainDlg)
 
 
 //////////////////////////////////////////////////////////////////////////
-// Инициализация диалога
+// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РґРёР°Р»РѕРіР°
 //
 LRESULT CDlgOptions::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
-	// выравниваем по центру
+	// РІС‹СЂР°РІРЅРёРІР°РµРј РїРѕ С†РµРЅС‚СЂСѓ
 	CenterWindow();
 
-	// вставка в заголовок диалога версии программы
+	// РІСЃС‚Р°РІРєР° РІ Р·Р°РіРѕР»РѕРІРѕРє РґРёР°Р»РѕРіР° РІРµСЂСЃРёРё РїСЂРѕРіСЂР°РјРјС‹
 	std::vector<WCHAR> wcTitle(GetWindowTextLength() + 1);
 
 	::GetWindowText(m_hWnd, &wcTitle.front(), static_cast<int>(wcTitle.size()));
@@ -48,7 +48,7 @@ LRESULT CDlgOptions::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 	wsTitle += PROGRAM_VERSION;
 	SetWindowText(wsTitle.c_str());
 
-	// заполнение списка языков
+	// Р·Р°РїРѕР»РЅРµРЅРёРµ СЃРїРёСЃРєР° СЏР·С‹РєРѕРІ
 	m_cbLanguages = static_cast<CComboBox>(GetDlgItem(IDC_COMBO_LANGUAGES));
 
 	m_wLanguageID   = m_pMainDlg->GetLanguageID();
@@ -70,7 +70,7 @@ LRESULT CDlgOptions::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 
 	m_cbLanguages.SetCurSel(iSelect);
 
-	// установка ползунка задержки
+	// СѓСЃС‚Р°РЅРѕРІРєР° РїРѕР»Р·СѓРЅРєР° Р·Р°РґРµСЂР¶РєРё
 	m_iDelay = m_pMainDlg->GetDelay();
 
 	m_tbDelay = static_cast<CTrackBarCtrl>(GetDlgItem(IDC_SLIDER_DELAY));
@@ -83,7 +83,7 @@ LRESULT CDlgOptions::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 	m_sDelay = static_cast<CStatic>(GetDlgItem(IDC_STATIC_DELAY_SECONDS));
 	m_sDelay.SetWindowText(streamDelay.str().c_str());
 
-	// установка ползунка прозрачности
+	// СѓСЃС‚Р°РЅРѕРІРєР° РїРѕР»Р·СѓРЅРєР° РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚Рё
 	m_bTransparency = m_pMainDlg->GetTransparency();
 
 	m_tbTransparency = static_cast<CTrackBarCtrl>(GetDlgItem(IDC_SLIDER_TRANSPARENCY));
@@ -96,7 +96,7 @@ LRESULT CDlgOptions::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 	m_sTransparency = static_cast<CStatic>(GetDlgItem(IDC_STATIC_PERCENT_TRANSPARENCY));
 	m_sTransparency.SetWindowText(streamTransparency.str().c_str());
 
-	// установка ползунка высоты окна
+	// СѓСЃС‚Р°РЅРѕРІРєР° РїРѕР»Р·СѓРЅРєР° РІС‹СЃРѕС‚С‹ РѕРєРЅР°
 	m_fHeight = m_pMainDlg->GetHeight();
 
 	m_tbHeight = static_cast<CTrackBarCtrl>(GetDlgItem(IDC_SLIDER_SIZE));
@@ -109,48 +109,48 @@ LRESULT CDlgOptions::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 	m_sHeight = static_cast<CStatic>(GetDlgItem(IDC_STATIC_PERCENT_SIZE));
 	m_sHeight.SetWindowText(streamHeight.str().c_str());
 
-	// вывод цвета
+	// РІС‹РІРѕРґ С†РІРµС‚Р°
 	m_crColorOld = m_crColor = m_pMainDlg->GetColor();
 	m_sColor = static_cast<CStatic>(GetDlgItem(IDC_STATIC_VIEWCOLOR));
 	m_sColor.GetWindowRect(m_rColor);
 	ScreenToClient(m_rColor);
 
-	// установка горячей клавиши
+	// СѓСЃС‚Р°РЅРѕРІРєР° РіРѕСЂСЏС‡РµР№ РєР»Р°РІРёС€Рё
 	DWORD dwHotkeyShow = m_pMainDlg->GetHotkeyOff();
 
 	m_hkOff = static_cast<CHotKeyCtrl>(GetDlgItem(IDC_HOTKEY_OFF));
 	m_hkOff.SetHotKey(LOBYTE(LOWORD(dwHotkeyShow)), HIBYTE(LOWORD(dwHotkeyShow)));
 
-	// установка кнопки блокировки рабочей станции
+	// СѓСЃС‚Р°РЅРѕРІРєР° РєРЅРѕРїРєРё Р±Р»РѕРєРёСЂРѕРІРєРё СЂР°Р±РѕС‡РµР№ СЃС‚Р°РЅС†РёРё
 	m_btnLock = static_cast<CButton>(GetDlgItem(IDC_BUTTON_LOCK));
 	m_btnLock.SetCheck(m_pMainDlg->GetLock());
 
-	// установка кнопки выхода из системы
+	// СѓСЃС‚Р°РЅРѕРІРєР° РєРЅРѕРїРєРё РІС‹С…РѕРґР° РёР· СЃРёСЃС‚РµРјС‹
 	m_btnLogoff = static_cast<CButton>(GetDlgItem(IDC_BUTTON_LOGOFF));
 	m_btnLogoff.SetCheck(m_pMainDlg->GetLogoff());
 
-	// установки кнопки выключения монитора при запуске
+	// СѓСЃС‚Р°РЅРѕРІРєРё РєРЅРѕРїРєРё РІС‹РєР»СЋС‡РµРЅРёСЏ РјРѕРЅРёС‚РѕСЂР° РїСЂРё Р·Р°РїСѓСЃРєРµ
 	m_btnOffOnRun = static_cast<CButton>(GetDlgItem(IDC_BUTTON_OFFONRUN));
 	m_btnOffOnRun.SetCheck(m_pMainDlg->GetOffOnRun());
 
-	// установки кнопки автозапуска программы при старте Windows
+	// СѓСЃС‚Р°РЅРѕРІРєРё РєРЅРѕРїРєРё Р°РІС‚РѕР·Р°РїСѓСЃРєР° РїСЂРѕРіСЂР°РјРјС‹ РїСЂРё СЃС‚Р°СЂС‚Рµ Windows
 	m_btnAutostart = static_cast<CButton>(GetDlgItem(IDC_BUTTON_AUTOSTART));
 	m_btnAutostart.SetCheck(m_pMainDlg->GetAutostart());
 
 	PostMessage(WM_COMMAND, IDC_BUTTON_AUTOSTART);
 
-	// установка кнопки выключения монитора после блокирования станции
+	// СѓСЃС‚Р°РЅРѕРІРєР° РєРЅРѕРїРєРё РІС‹РєР»СЋС‡РµРЅРёСЏ РјРѕРЅРёС‚РѕСЂР° РїРѕСЃР»Рµ Р±Р»РѕРєРёСЂРѕРІР°РЅРёСЏ СЃС‚Р°РЅС†РёРё
 	m_btnOffAfterLock = static_cast<CButton>(GetDlgItem(IDC_BUTTON_OFFAFTERLOCK));
 	m_btnOffAfterLock.SetCheck(m_pMainDlg->GetOffAfterLock());
 	
-	// установка ссылок
+	// СѓСЃС‚Р°РЅРѕРІРєР° СЃСЃС‹Р»РѕРє
 	m_hlEmail.SetHyperLink(m_pMainDlg->GetStringLang(IDS_EMAIL).c_str());
 	m_hlEmail.SubclassWindow(GetDlgItem(IDC_HYPERLINK_EMAIL));
 
 	m_hlWWW.SetHyperLink(m_pMainDlg->GetStringLang(IDS_WWW).c_str());
 	m_hlWWW.SubclassWindow(GetDlgItem(IDC_HYPERLINK_WWW));
 
-	// изменение шрифтов
+	// РёР·РјРµРЅРµРЅРёРµ С€СЂРёС„С‚РѕРІ
 	CLogFont lfBold(static_cast<CStatic>(GetDlgItem(IDC_STATIC_WWW)).GetFont());
 	lfBold.SetBold();
 
@@ -163,7 +163,7 @@ LRESULT CDlgOptions::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 	static_cast<CStatic>(GetDlgItem(IDC_STATIC_HOTKEY)).SetFont(lfBold.CreateFontIndirect());
 	static_cast<CStatic>(GetDlgItem(IDC_STATIC_TRANSPARENCY)).SetFont(lfBold.CreateFontIndirect());
 
-	// вывод окна
+	// РІС‹РІРѕРґ РѕРєРЅР°
 	m_pMainDlg->ShowWindow(SW_SHOW);
 
 	return 0;
@@ -171,7 +171,7 @@ LRESULT CDlgOptions::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 
 
 //////////////////////////////////////////////////////////////////////////
-// Обработка WM_DESTROY
+// РћР±СЂР°Р±РѕС‚РєР° WM_DESTROY
 //
 LRESULT CDlgOptions::OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
@@ -180,29 +180,29 @@ LRESULT CDlgOptions::OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bH
 
 
 //////////////////////////////////////////////////////////////////////////
-// Обработка IDOK
+// РћР±СЂР°Р±РѕС‚РєР° IDOK
 //
 LRESULT CDlgOptions::OnOK(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
-	// установка задержки
+	// СѓСЃС‚Р°РЅРѕРІРєР° Р·Р°РґРµСЂР¶РєРё
 	m_pMainDlg->SetDelay(m_tbDelay.GetPos());
 
-	// установка горячей клавиши
+	// СѓСЃС‚Р°РЅРѕРІРєР° РіРѕСЂСЏС‡РµР№ РєР»Р°РІРёС€Рё
 	m_pMainDlg->SetHotkeyOff(m_hkOff.GetHotKey());
 
-	// установка блокировки рабочей станции
+	// СѓСЃС‚Р°РЅРѕРІРєР° Р±Р»РѕРєРёСЂРѕРІРєРё СЂР°Р±РѕС‡РµР№ СЃС‚Р°РЅС†РёРё
 	m_pMainDlg->SetLock(m_btnLock.GetCheck());
 
-	// установка выхода из системы
+	// СѓСЃС‚Р°РЅРѕРІРєР° РІС‹С…РѕРґР° РёР· СЃРёСЃС‚РµРјС‹
 	m_pMainDlg->SetLogoff(m_btnLogoff.GetCheck());
 
-	// установка флага выключения монитора при запуске программы
+	// СѓСЃС‚Р°РЅРѕРІРєР° С„Р»Р°РіР° РІС‹РєР»СЋС‡РµРЅРёСЏ РјРѕРЅРёС‚РѕСЂР° РїСЂРё Р·Р°РїСѓСЃРєРµ РїСЂРѕРіСЂР°РјРјС‹
 	m_pMainDlg->SetOffOnRun(m_btnOffOnRun.GetCheck());
 
-	// установка флага автозапуска с Windows
+	// СѓСЃС‚Р°РЅРѕРІРєР° С„Р»Р°РіР° Р°РІС‚РѕР·Р°РїСѓСЃРєР° СЃ Windows
 	m_pMainDlg->SetAutostart(m_btnAutostart.GetCheck());
 
-	// установка выключения монитора после блокировки станции
+	// СѓСЃС‚Р°РЅРѕРІРєР° РІС‹РєР»СЋС‡РµРЅРёСЏ РјРѕРЅРёС‚РѕСЂР° РїРѕСЃР»Рµ Р±Р»РѕРєРёСЂРѕРІРєРё СЃС‚Р°РЅС†РёРё
 	m_pMainDlg->SetOffAfterLock(m_btnOffAfterLock.GetCheck());
 
 	CloseDialog(IDOK);
@@ -212,7 +212,7 @@ LRESULT CDlgOptions::OnOK(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandl
 
 
 //////////////////////////////////////////////////////////////////////////
-// Обработка IDCANCEL
+// РћР±СЂР°Р±РѕС‚РєР° IDCANCEL
 //
 LRESULT CDlgOptions::OnCancel(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
@@ -225,7 +225,7 @@ LRESULT CDlgOptions::OnCancel(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bH
 
 
 //////////////////////////////////////////////////////////////////////////
-// Инициализация шаблона диалога
+// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С€Р°Р±Р»РѕРЅР° РґРёР°Р»РѕРіР°
 //
 VOID CDlgOptions::DoInitTemplate() 
 {
@@ -234,7 +234,7 @@ VOID CDlgOptions::DoInitTemplate()
 
 
 //////////////////////////////////////////////////////////////////////////
-// Инициализация контролов диалога
+// РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РєРѕРЅС‚СЂРѕР»РѕРІ РґРёР°Р»РѕРіР°
 //
 VOID CDlgOptions::DoInitControls() 
 {
@@ -243,7 +243,7 @@ VOID CDlgOptions::DoInitControls()
 
 
 //////////////////////////////////////////////////////////////////////////
-// Закрытие диалога
+// Р—Р°РєСЂС‹С‚РёРµ РґРёР°Р»РѕРіР°
 //
 VOID CDlgOptions::CloseDialog(int nVal)
 {
@@ -254,7 +254,7 @@ VOID CDlgOptions::CloseDialog(int nVal)
 
 
 //////////////////////////////////////////////////////////////////////////
-// Смена языка
+// РЎРјРµРЅР° СЏР·С‹РєР°
 //
 LRESULT CDlgOptions::OnChangeLanguage(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
@@ -277,7 +277,7 @@ LRESULT CDlgOptions::OnChangeLanguage(WORD wNotifyCode, WORD wID, HWND hWndCtl, 
 
 
 //////////////////////////////////////////////////////////////////////////
-// Восстановление измененных настроек
+// Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РёР·РјРµРЅРµРЅРЅС‹С… РЅР°СЃС‚СЂРѕРµРє
 //
 VOID CDlgOptions::RestoreSettings()
 {
@@ -288,7 +288,7 @@ VOID CDlgOptions::RestoreSettings()
 
 
 //////////////////////////////////////////////////////////////////////////
-// Выбор цвета
+// Р’С‹Р±РѕСЂ С†РІРµС‚Р°
 //
 LRESULT CDlgOptions::OnColor(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
@@ -308,7 +308,7 @@ LRESULT CDlgOptions::OnColor(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHa
 
 
 //////////////////////////////////////////////////////////////////////////
-// Изменение задержки
+// РР·РјРµРЅРµРЅРёРµ Р·Р°РґРµСЂР¶РєРё
 //
 LRESULT CDlgOptions::OnChangeDelay(WORD wID, LPNMHDR pnmh, BOOL& bHandled)
 {
@@ -324,7 +324,7 @@ LRESULT CDlgOptions::OnChangeDelay(WORD wID, LPNMHDR pnmh, BOOL& bHandled)
 
 
 //////////////////////////////////////////////////////////////////////////
-// Обработка WM_PAINT
+// РћР±СЂР°Р±РѕС‚РєР° WM_PAINT
 //
 LRESULT CDlgOptions::OnPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
@@ -337,7 +337,7 @@ LRESULT CDlgOptions::OnPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHan
 
 
 //////////////////////////////////////////////////////////////////////////
-// Изменение размера окна
+// РР·РјРµРЅРµРЅРёРµ СЂР°Р·РјРµСЂР° РѕРєРЅР°
 //
 LRESULT CDlgOptions::OnChangeSize(WORD wID, LPNMHDR pnmh, BOOL& bHandled)
 {
@@ -362,7 +362,7 @@ LRESULT CDlgOptions::OnChangeSize(WORD wID, LPNMHDR pnmh, BOOL& bHandled)
 
 
 //////////////////////////////////////////////////////////////////////////
-// Изменение прозрачности
+// РР·РјРµРЅРµРЅРёРµ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚Рё
 //
 LRESULT CDlgOptions::OnChangeTransparent(WORD wID, LPNMHDR pnmh, BOOL& bHandled)
 {
@@ -381,7 +381,7 @@ LRESULT CDlgOptions::OnChangeTransparent(WORD wID, LPNMHDR pnmh, BOOL& bHandled)
 
 
 //////////////////////////////////////////////////////////////////////////
-// Выключает или выключает checkbox'ы 
+// Р’С‹РєР»СЋС‡Р°РµС‚ РёР»Рё РІС‹РєР»СЋС‡Р°РµС‚ checkbox'С‹ 
 //
 LRESULT CDlgOptions::OnDisableCheckbox(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
