@@ -1,0 +1,289 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONS DIALOGEX 0, 0, 176, 273
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Параметры OffMon"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_LANGUAGES,75,77,84,84,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_SLIDER_DELAY,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,70,91,77,15
+    PUSHBUTTON      "Выбрать",IDC_BUTTON_COLOR,110,108,50,14
+    CONTROL         "",IDC_SLIDER_SIZE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,69,144,68,15
+    CONTROL         "",IDC_HOTKEY_OFF,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,75,163,80,14
+    CONTROL         "Блокировать компьютер",IDC_BUTTON_LOCK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,198,100,10
+    CONTROL         "Запускаться с Windows",IDC_BUTTON_AUTOSTART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,237,95,10
+    CONTROL         "Срабатывать сразу при запуске",IDC_BUTTON_OFFONRUN,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,224,125,10
+    DEFPUSHBUTTON   "Применить",IDOK,65,254,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,119,254,50,14
+    GROUPBOX        "",IDC_STATIC,6,2,164,65
+    GROUPBOX        "",IDC_STATIC,6,69,164,181
+    RTEXT           "WWW:",IDC_STATIC_WWW,16,41,40,8
+    RTEXT           "E-mail:",IDC_STATIC_EMAIL,16,54,40,8
+    CTEXT           "Программа безконтактного выключения монитора и блокирования рабочей станции",IDC_STATIC,9,9,156,18
+    RTEXT           "Цвет",IDC_STATIC_COLOR,19,110,47,8
+    RTEXT           "Задержка",IDC_STATIC_DELAY,19,95,47,8
+    RTEXT           "Размер",IDC_STATIC_SIZE,18,147,47,8
+    CONTROL         "",IDC_STATIC_VIEWCOLOR,"Static",SS_LEFTNOWORDWRAP | NOT WS_VISIBLE | WS_BORDER | WS_GROUP,75,109,32,12
+    RTEXT           "Язык",IDC_STATIC_LANG,19,79,47,8
+    RTEXT           "Кнопки",IDC_STATIC_HOTKEY,19,166,47,8
+    LTEXT           "http://offmon.wholegroup.com",IDC_HYPERLINK_WWW,61,41,100,8
+    LTEXT           "offmon@wholegroup.com",IDC_HYPERLINK_EMAIL,61,54,83,8
+    RTEXT           "8 с",IDC_STATIC_DELAY_SECONDS,142,94,15,8
+    RTEXT           "100%",IDC_STATIC_PERCENT_SIZE,136,148,20,8
+    CONTROL         "",IDC_SLIDER_TRANSPARENCY,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,69,126,68,15
+    RTEXT           "Прозрачность",IDC_STATIC_TRANSPARENCY,8,129,57,8
+    RTEXT           "100%",IDC_STATIC_PERCENT_TRANSPARENCY,136,130,20,8
+    CONTROL         "Выполнять выход из системы",IDC_BUTTON_LOGOFF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,211,117,10
+    CONTROL         "Выключать при блокировке",IDC_BUTTON_OFFAFTERLOCK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,185,111,10
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 169
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 266
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_OFFMON              ICON                    "OffMon.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_POPUP MENU 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "Выход",                       IDB_QUIT
+        MENUITEM "Параметры",                   IDB_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "ВЫКЛЮЧИТЬ",                   IDB_OFFMON
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_WWW                 "http://offmon.wholegroup.com/index_rus.html"
+    IDS_EMAIL               "mailto:offmon@wholegroup.com"
+    IDS_SECOND              "с"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Neutral) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAINDLG DIALOGEX 0, 0, 316, 182
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 176, 273
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "OffMon settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_LANGUAGES,75,77,84,98,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_SLIDER_DELAY,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,70,91,77,15
+    PUSHBUTTON      "Choose",IDC_BUTTON_COLOR,110,108,50,14
+    CONTROL         "",IDC_SLIDER_SIZE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,69,144,68,15
+    CONTROL         "",IDC_HOTKEY_OFF,"msctls_hotkey32",WS_BORDER | WS_TABSTOP,75,163,80,14
+    CONTROL         "To lock computer",IDC_BUTTON_LOCK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,198,70,10
+    CONTROL         "To run after Windows is started",IDC_BUTTON_AUTOSTART,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,237,117,10
+    CONTROL         "To turn off immediately at start",IDC_BUTTON_OFFONRUN,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,224,116,10
+    DEFPUSHBUTTON   "Apply",IDOK,65,254,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,119,254,50,14
+    GROUPBOX        "",IDC_STATIC,6,2,164,65
+    GROUPBOX        "",IDC_STATIC,6,69,164,181
+    RTEXT           "WWW:",IDC_STATIC_WWW,16,41,40,8
+    RTEXT           "E-mail:",IDC_STATIC_EMAIL,16,54,40,8
+    CTEXT           "OffMon’s purpose is the most effective usage of the energy-saving standby monitor mode.",IDC_STATIC,9,9,156,18
+    RTEXT           "Color",IDC_STATIC_COLOR,19,110,47,8
+    RTEXT           "Delay",IDC_STATIC_DELAY,19,95,47,8
+    RTEXT           "Size",IDC_STATIC_SIZE,18,147,47,8
+    CONTROL         "",IDC_STATIC_VIEWCOLOR,"Static",SS_LEFTNOWORDWRAP | NOT WS_VISIBLE | WS_BORDER | WS_GROUP,75,109,32,12
+    RTEXT           "Language",IDC_STATIC_LANG,19,79,47,8
+    RTEXT           "Hot key",IDC_STATIC_HOTKEY,19,166,47,8
+    LTEXT           "http://offmon.wholegroup.com",IDC_HYPERLINK_WWW,61,41,100,8
+    LTEXT           "offmon@wholegroup.com",IDC_HYPERLINK_EMAIL,61,54,83,8
+    RTEXT           "8 sec",IDC_STATIC_DELAY_SECONDS,142,94,22,8
+    RTEXT           "100%",IDC_STATIC_PERCENT_SIZE,136,148,20,8
+    CONTROL         "",IDC_SLIDER_TRANSPARENCY,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,69,126,68,15
+    RTEXT           "Transparency",IDC_STATIC_TRANSPARENCY,8,129,57,8
+    RTEXT           "100%",IDC_STATIC_PERCENT_TRANSPARENCY,136,130,20,8
+    CONTROL         "To logout from session",IDC_BUTTON_LOGOFF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,211,88,10
+    CONTROL         "To turn off after computer locked",IDC_BUTTON_OFFAFTERLOCK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,33,185,123,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_MAINDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 169
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 266
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_POPUP MENU 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "Quit",                        IDB_QUIT
+        MENUITEM "Settings",                    IDB_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "TURN OFF",                    IDB_OFFMON
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_WWW                 "http://offmon.wholegroup.com/index.html"
+    IDS_EMAIL               "mailto:offmon@wholegroup.com"
+    IDS_SECOND              "sec"
+END
+
+#endif    // English (Neutral) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

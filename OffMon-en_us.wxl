@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WixLocalization Culture="en-US" xmlns="http://schemas.microsoft.com/wix/2006/localization" >
+	<String Id="OffMonARPCOMMENTS">Software that turns off monitor and locks computer. Energy saving software.</String>
+	<String Id="OffMonARPCONTACT">Andrey V.Rychkov (offmon@wholegroup.com)</String>
+	<String Id="OffMonUninstall">Uninstall</String>
+	<String Id="OffMonManufacturer">Whole Group</String>
+	<String Id="OffMonDescription">Software that turns off monitor and locks computer. Energy saving software.</String>
+	<String Id="OffMonError01">Newer version already installed</String>
+	<String Id="OffMonOptions">Settings</String>
+</WixLocalization>

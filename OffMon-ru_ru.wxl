@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WixLocalization Culture="ru-RU" xmlns="http://schemas.microsoft.com/wix/2006/localization" >
+	<String Id="OffMonARPCOMMENTS">Программа безконтактного выключения монитора и блокирования рабочей станции</String>
+	<String Id="OffMonARPCONTACT">Андрей В. Рычков (offmon@wholegroup.com)</String>
+	<String Id="OffMonUninstall">Удалить</String>
+	<String Id="OffMonManufacturer">Whole Group</String>
+	<String Id="OffMonDescription">Программа безконтактного выключения монитора и блокирования рабочей станции</String>
+	<String Id="OffMonError01">На этот компьютере уже установлена более новая версия</String>
+	<String Id="OffMonOptions">Настройка</String>
+</WixLocalization>
